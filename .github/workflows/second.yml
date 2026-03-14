@@ -1,1 +1,24 @@
+name: My Second Pipeline
 
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on: 
+  push:
+    branches: 
+      - main
+
+jobs:
+  render-figlet-banner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install figlet
+        run: sudo apt-get update && sudo apt-get install -y figlet
+
+      - name: Print figlet banner from notes.txt
+        run: |
+          TEXT="$(cat notes.txt)"
+          figlet "$TEXT"
