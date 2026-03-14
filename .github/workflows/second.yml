@@ -22,3 +22,18 @@ jobs:
         run: |
           TEXT="$(cat notes.txt)"
           figlet "$TEXT"
+
+  render-cowsay-banner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install -y cowsay
+
+      - name: Print cowsay banner from notes.txt
+        run: |
+          TEXT="$(cat notes.txt)"
+          cowsay "$TEXT"        
