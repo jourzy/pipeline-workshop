@@ -1,0 +1,14 @@
+name: My First Pipeline
+
+on: push
+
+jobs:
+  output-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Print a message
+        run: echo "🎉 My first pipeline is running!"
