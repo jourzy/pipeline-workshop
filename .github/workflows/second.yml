@@ -1,6 +1,6 @@
 name: My Second Pipeline
 
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is automating workflows with ${{ github.workflow }} # ← dynamic run name
 
 on: 
   push:
