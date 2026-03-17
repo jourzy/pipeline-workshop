@@ -87,3 +87,32 @@ Edit `notes.txt`, commit, and watch the workflow rerun.
 ## 🎉 You did it!
 You've created your first CI workflow. This is the perfect foundation for learning testing, deployment, and automation.
 
+---
+## 📚 Key Concepts
+
+### What is YAML?
+- **YAML Ain't Markup Language**
+- Originally it stood for "Yet Another Markup Language," but it was renamed to emphasise that it is designed for data serialisation and configuration, rather than document markup like XML or HTML
+- **Human-Readable:** Designed to be easily read and written by humans
+- **Indentation-Based:** Uses whitespace (spaces, not tabs) to define structure and hierarchy
+- **Key-Value Pairs:** The basic building block, structured as `key: value`
+- **File Extensions:** Uses `.yaml` or `.yml`
+- **Lists** are written with a `-` at the start of each item
+
+---
+
+### Workflow basics
+A **workflow** is an automated process defined in a YAML file inside `.github/workflows/`. It tells GitHub what to do and when to do it.
+
+A workflow has three main parts:
+
+| Part | What it does | Example |
+|---|---|---|
+| **Trigger** | Defines when the workflow runs | `on: push` |
+| **Job** | A group of steps that run together | `jobs: my-job:` |
+| **Step** | A single action or command in a job | `run: npm test` |
+
+When you push code, GitHub reads the workflow file and runs each job on a fresh virtual machine (called a **runner**). Steps inside a job run in order, one after another.
+
+Each step can either run a script that you define or run an **action**, which is a reusable extension that can simplify your workflow.
+
